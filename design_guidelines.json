@@ -1,0 +1,148 @@
+{
+  "project_name": "Akademik Büyücü",
+  "design_philosophy": {
+    "persona": "E1: The Anti-AI Designer",
+    "archetype": "Jewel & Luxury (Mystic Variant)",
+    "core_principles": [
+      "Fusion: Academic Rigor x High Fantasy RPG",
+      "Atmosphere: Deep, moody, bioluminescent",
+      "Texture: Grain, glass, and stone over flat colors",
+      "Motion: Every action has a magical reaction (particles, glows)"
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Cinzel, serif",
+      "body": "Manrope, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "imports": [
+      "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Manrope:wght@300;400;600;800&display=swap"
+    ],
+    "usage_rules": {
+      "headings": "Cinzel - Uppercase, tracking-wide, gold or cyan glow for H1/H2",
+      "body": "Manrope - High legibility, slightly tight tracking for modern feel",
+      "ui_elements": "Manrope - Uppercase, small text, wide spacing (tracking-widest) for labels"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": {
+        "default": "#020617",
+        "paper": "#0f172a",
+        "overlay": "rgba(2, 6, 23, 0.8)"
+      },
+      "primary": {
+        "main": "#7c3aed",
+        "glow": "#8b5cf6",
+        "text": "#ede9fe"
+      },
+      "secondary": {
+        "main": "#fbbf24",
+        "glow": "#f59e0b",
+        "text": "#fffbeb"
+      },
+      "accent": {
+        "cyan": "#06b6d4",
+        "magenta": "#d946ef"
+      },
+      "text": {
+        "primary": "#f8fafc",
+        "secondary": "#94a3b8",
+        "muted": "#475569"
+      }
+    },
+    "gradients": {
+      "mana_bar": "linear-gradient(90deg, #4c1d95 0%, #7c3aed 50%, #22d3ee 100%)",
+      "gold_text": "linear-gradient(to bottom, #fcd34d, #fbbf24, #d97706)",
+      "mystic_overlay": "radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15), transparent 70%)"
+    }
+  },
+  "layout": {
+    "grid_system": "The Control Room (Mode B)",
+    "spacing": "Generous (2x standard)",
+    "container_style": "Glassmorphism with Rune Borders",
+    "border_radius": {
+      "card": "16px",
+      "button": "8px",
+      "input": "8px"
+    },
+    "z_index": {
+      "background": -1,
+      "content": 10,
+      "overlay": 50,
+      "modal": 100,
+      "toast": 200
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "Glassmorphism",
+      "classes": "bg-slate-950/40 backdrop-blur-xl border border-white/10 shadow-2xl hover:border-purple-500/30 transition-all duration-300"
+    },
+    "buttons": {
+      "primary": "bg-violet-600 hover:bg-violet-500 text-white font-cinzel tracking-wider shadow-[0_0_15px_rgba(124,58,237,0.5)] border border-violet-400/20",
+      "secondary": "bg-transparent border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-manrope"
+    },
+    "inputs": {
+      "style": "Deep Stone",
+      "classes": "bg-slate-900/50 border-slate-800 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 text-slate-100 placeholder:text-slate-600"
+    }
+  },
+  "visual_enhancers": {
+    "noise_texture": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+    "glow_effects": "box-shadow: 0 0 20px -5px var(--color-primary)",
+    "borders": "1px solid rgba(255,255,255,0.08)"
+  },
+  "image_urls": {
+    "backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1552591663-19c67e9e2f77?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "hero_bg",
+        "description": "Mystic purple texture for main dashboard background overlay"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1695844011292-429b1a316a8d?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "section_bg",
+        "description": "Dark forest texture for specific sections"
+      }
+    ],
+    "avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1665868727194-0e5eac640091?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "user_avatar",
+        "description": "Default Wizard Avatar"
+      }
+    ],
+    "icons": [
+      {
+        "url": "https://images.unsplash.com/photo-1617004890831-c99c16006144?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "talisman_gold",
+        "description": "Gold Coin/Talisman for achievements"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1633785584922-503ad0e982f5?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "talisman_rare",
+        "description": "Rare Talisman Badge"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'lucide-react' and 'framer-motion' immediately.",
+    "2. THEME: Force Dark Mode by default. Add 'dark' class to html/body.",
+    "3. LAYOUT: Use the 'Control Room' grid for the Dashboard. Active Spells (Tasks) take center stage (col-span-2), Stats on the left (col-span-1), Leaderboard on the right (col-span-1).",
+    "4. COMPONENTS: Customize Shadcn components. Remove default white backgrounds. Use the 'glassmorphism' classes defined above.",
+    "5. MOTION: Add 'AnimatePresence' to the Spell List. When a spell is cast (task done), it should dissolve with a particle effect (use simple CSS or framer-motion layoutId).",
+    "6. BACKGROUND: Apply the noise texture to the body background to avoid 'flat digital' look.",
+    "7. DATA-TESTID: Ensure every interactive element has a data-testid attribute (e.g., 'cast-spell-btn', 'login-submit')."
+  ],
+  "universal_guidelines": [
+    "Do not use generic gradients.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "NEVER use AI assistant Emoji characters like 🤖🧠 for icons.",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Use 'sonner' for toasts."
+  ]
+}

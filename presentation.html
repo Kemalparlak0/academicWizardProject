@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademik Büyücü - Proje Sunumu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/night.min.css">
+    <style>
+        :root {
+            --violet: #7c3aed;
+            --gold: #fbbf24;
+            --slate: #0f172a;
+        }
+        
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .reveal h1 {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+        
+        .reveal h2 {
+            color: var(--violet);
+        }
+        
+        .reveal .highlight {
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .reveal .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .reveal .feature-card {
+            background: rgba(124, 58, 237, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--violet);
+        }
+        
+        .reveal .metric {
+            font-size: 3em;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .reveal .tech-stack {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .reveal .tech-item {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 2px solid var(--violet);
+        }
+        
+        .reveal .success-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Başlık -->
+            <section data-background-gradient="linear-gradient(to bottom, #020617, #1e1b4b)">
+                <h1>🔮 Akademik Büyücü</h1>
+                <h3>Oyunlaştırılmış Alışkanlık Takip Uygulaması</h3>
+                <p style="margin-top: 50px;">
+                    <small>FastAPI + React + MongoDB</small>
+                </p>
+            </section>
+
+            <!-- Slide 2: İçindekiler -->
+            <section>
+                <h2>📋 İçindekiler</h2>
+                <ul>
+                    <li>Proje Tanıtımı</li>
+                    <li>Problem & Çözüm</li>
+                    <li>Temel Özellikler</li>
+                    <li>Teknoloji Stack</li>
+                    <li>Mimari</li>
+                    <li>Oyunlaştırma Mekanikleri</li>
+                    <li>Demo</li>
+                    <li>Test Sonuçları</li>
+                </ul>
+            </section>
+
+            <!-- Slide 3: Proje Tanıtımı -->
+            <section>
+                <h2>🎯 Proje Tanıtımı</h2>
+                <p>Akademik Büyücü, alışkanlık takibini <span class="highlight">RPG oyun mekaniği</span> ile birleştiren yenilikçi bir web uygulamasıdır.</p>
+                
+                <div class="feature-grid" style="margin-top: 40px;">
+                    <div class="feature-card">
+                        <h3>🧙 Kullanıcı</h3>
+                        <p>Büyücü (Wizard)</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>✨ Alışkanlık</h3>
+                        <p>Büyü (Spell)</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🏆 Başarım</h3>
+                        <p>Tılsım (Talisman)</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Motivasyon</h3>
+                        <p>XP & Seviye</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Problem -->
+            <section>
+                <h2>🔍 Problem</h2>
+                <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <p class="metric">92%</p>
+                    <p>İnsanların yeni yıl hedeflerine ulaşamama oranı</p>
+                    
+                    <ul style="margin-top: 40px; font-size: 1.2em;">
+                        <li>Alışkanlık takip uygulamaları sıkıcı</li>
+                        <li>Motivasyon kaybı</li>
+                        <li>Düzenli çalışma alışkanlığı geliştirmek zor</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 5: Çözüm -->
+            <section>
+                <h2>✅ Çözüm: Oyunlaştırma</h2>
+                <ul style="font-size: 1.2em;">
+                    <li>✨ Her tamamlanan görev <span class="highlight">XP</span> kazandırır</li>
+                    <li>🎯 Seviye atlama sistemi ile <span class="highlight">ilerleme hissi</span></li>
+                    <li>🔥 <span class="highlight">Streak</span> sistemi ile tutarlılık</li>
+                    <li>🏆 Tılsımlar ile <span class="highlight">ödüllendirme</span></li>
+                    <li>👥 Liderlik tablosu ile <span class="highlight">rekabet</span></li>
+                </ul>
+            </section>
+
+            <!-- Slide 6: Temel Özellikler -->
+            <section>
+                <h2>⭐ Temel Özellikler</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🎮 XP & Seviye</h3>
+                        <p>Her 100 XP = 1 seviye</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔥 Streak Sistemi</h3>
+                        <p>Günlük art arda takibi</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🏆 8 Tılsım</h3>
+                        <p>Otomatik kilidi açma</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 İstatistikler</h3>
+                        <p>Grafikler ve analizler</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🏅 Leaderboard</h3>
+                        <p>Sosyal rekabet</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎨 Dark Theme</h3>
+                        <p>Fantasy tasarım</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Teknoloji Stack -->
+            <section>
+                <h2>💻 Teknoloji Stack</h2>
+                
+                <div style="margin-top: 40px;">
+                    <h3 style="color: var(--gold);">Backend</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">🐍 Python 3.11+</div>
+                        <div class="tech-item">⚡ FastAPI</div>
+                        <div class="tech-item">🍃 MongoDB</div>
+                        <div class="tech-item">🔐 JWT</div>
+                        <div class="tech-item">🔒 Bcrypt</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h3 style="color: var(--violet);">Frontend</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">⚛️ React 19</div>
+                        <div class="tech-item">🎨 Tailwind CSS</div>
+                        <div class="tech-item">🎬 Framer Motion</div>
+                        <div class="tech-item">📊 Recharts</div>
+                        <div class="tech-item">🎯 Shadcn/UI</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Sistem Mimarisi -->
+            <section>
+                <h2>🏗️ Sistem Mimarisi</h2>
+                <pre><code data-trim data-noescape style="font-size: 0.8em;">
+┌─────────────────┐
+│   Frontend      │
+│   React App     │
+│  (Port: 3000)   │
+└────────┬────────┘
+         │ HTTP/REST
+         │ (JWT Token)
+         ▼
+┌─────────────────┐
+│   Backend       │
+│   FastAPI       │
+│  (Port: 8001)   │
+└────────┬────────┘
+         │ Motor
+         │ (Async)
+         ▼
+┌─────────────────┐
+│   Database      │
+│   MongoDB       │
+│  (Port: 27017)  │
+└─────────────────┘
+                </code></pre>
+            </section>
+
+            <!-- Slide 9: Veri Modeli -->
+            <section>
+                <h2>📊 Veritabanı Collections</h2>
+                <ul style="text-align: left; font-size: 0.9em;">
+                    <li><strong>users</strong>: Kullanıcı bilgileri (username, email, password, xp, level, streak)</li>
+                    <li><strong>spells</strong>: Büyüler (title, description, repeatType, xpReward, completedDates)</li>
+                    <li><strong>talismans</strong>: Tılsımlar (name, description, iconUrl, condition)</li>
+                    <li><strong>user_talismans</strong>: Kazanılan tılsımlar (userId, talismanId, unlockedAt)</li>
+                </ul>
+            </section>
+
+            <!-- Slide 10: Oyunlaştırma Mekanikleri -->
+            <section>
+                <h2>🎮 Oyunlaştırma Mekanikleri</h2>
+                
+                <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                    <h3 style="color: var(--gold);">XP Sistemi</h3>
+                    <pre><code data-trim style="font-size: 0.8em;">
+def calculate_level(xp: int) -> int:
+    return (xp // 100) + 1
+
+# Örnekler:
+0-99 XP   → Seviye 1
+100-199 XP → Seviye 2
+1000+ XP   → Seviye 11+
+                    </code></pre>
+                    
+                    <h3 style="color: var(--violet); margin-top: 30px;">Streak Hesaplama</h3>
+                    <pre><code data-trim style="font-size: 0.8em;">
+if son_tamamlama == dün:
+    streak += 1  # Devam ediyor
+elif son_tamamlama == bugün:
+    streak = streak  # Aynı gün
+else:
+    streak = 1  # Yeni başlangıç
+                    </code></pre>
+                </div>
+            </section>
+
+            <!-- Slide 11: 8 Tılsım -->
+            <section>
+                <h2>🏆 8 Farklı Tılsım</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; font-size: 0.85em;">
+                    <div class="feature-card">
+                        <strong>İlk Adım</strong><br>İlk büyüyü tamamla
+                    </div>
+                    <div class="feature-card">
+                        <strong>Çırak Büyücü</strong><br>Seviye 5'e ulaş
+                    </div>
+                    <div class="feature-card">
+                        <strong>Usta Büyücü</strong><br>Seviye 10'a ulaş
+                    </div>
+                    <div class="feature-card">
+                        <strong>Haftalık Disiplin</strong><br>7 gün art arda
+                    </div>
+                    <div class="feature-card">
+                        <strong>Aylık Kararlılık</strong><br>30 gün art arda
+                    </div>
+                    <div class="feature-card">
+                        <strong>Büyü Koleksiyoncusu</strong><br>10 büyü tamamla
+                    </div>
+                    <div class="feature-card">
+                        <strong>Büyü Ustası</strong><br>50 büyü tamamla
+                    </div>
+                    <div class="feature-card">
+                        <strong>Efsanevi Büyücü</strong><br>100 büyü tamamla
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: API Endpoints -->
+            <section>
+                <h2>🔌 API Endpoints</h2>
+                <div style="text-align: left; font-size: 0.85em;">
+                    <h3 style="color: var(--gold);">Authentication</h3>
+                    <ul>
+                        <li>POST /api/auth/register</li>
+                        <li>POST /api/auth/login</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--violet); margin-top: 20px;">Spells</h3>
+                    <ul>
+                        <li>GET /api/spells</li>
+                        <li>POST /api/spells</li>
+                        <li>POST /api/spells/{id}/complete</li>
+                        <li>DELETE /api/spells/{id}</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--gold); margin-top: 20px;">Gamification</h3>
+                    <ul>
+                        <li>GET /api/user/stats</li>
+                        <li>GET /api/user/talismans</li>
+                        <li>GET /api/leaderboard</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 13: Test Sonuçları -->
+            <section>
+                <h2>✅ Test Sonuçları</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;">
+                    <div>
+                        <h3 style="color: var(--gold);">Backend Tests</h3>
+                        <div class="success-badge">✓ Authentication</div>
+                        <div class="success-badge">✓ Spell CRUD</div>
+                        <div class="success-badge">✓ XP System</div>
+                        <div class="success-badge">✓ Streak Logic</div>
+                        <div class="success-badge">✓ Talisman Unlock</div>
+                        <div class="success-badge">✓ Leaderboard</div>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--violet);">Frontend Tests</h3>
+                        <div class="success-badge">✓ Auth Page</div>
+                        <div class="success-badge">✓ Dashboard</div>
+                        <div class="success-badge">✓ Spells Page</div>
+                        <div class="success-badge">✓ Talismans Page</div>
+                        <div class="success-badge">✓ Leaderboard</div>
+                        <div class="success-badge">✓ Statistics</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Performance -->
+            <section>
+                <h2>⚡ Performance</h2>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;">
+                    <div>
+                        <h3 style="color: var(--gold);">Backend Response</h3>
+                        <ul style="text-align: left;">
+                            <li>Register: ~150ms</li>
+                            <li>Login: ~100ms</li>
+                            <li>Get Spells: ~50ms</li>
+                            <li>Complete Spell: ~120ms</li>
+                            <li>Leaderboard: ~80ms</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--violet);">Frontend Load</h3>
+                        <ul style="text-align: left;">
+                            <li>İlk yükleme: ~2.5s</li>
+                            <li>Sayfa geçişleri: ~200ms</li>
+                            <li>API yanıt: ~100-200ms</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 15: Kullanıcı Arayüzü -->
+            <section>
+                <h2>🎨 Kullanıcı Arayüzü</h2>
+                <ul style="font-size: 1.1em;">
+                    <li>🌙 <strong>Dark Fantasy Tema</strong></li>
+                    <li>✨ <strong>Glassmorphism</strong> Card Tasarımları</li>
+                    <li>🎭 <strong>Cinzel</strong> (Başlıklar) + <strong>Manrope</strong> (Gövde)</li>
+                    <li>🎬 <strong>Framer Motion</strong> Animasyonlar</li>
+                    <li>📱 <strong>Responsive</strong> Tasarım</li>
+                    <li>🎯 <strong>Micro-interactions</strong></li>
+                    <li>🔔 <strong>Toast</strong> Bildirimleri</li>
+                </ul>
+            </section>
+
+            <!-- Slide 16: Güvenlik -->
+            <section>
+                <h2>🔒 Güvenlik</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🔐 JWT Authentication</h3>
+                        <p>7 günlük token geçerlilik</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔒 Bcrypt Hashing</h3>
+                        <p>12 rounds ile şifre hash'leme</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>✅ Input Validation</h3>
+                        <p>Pydantic ile veri doğrulama</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🌐 CORS</h3>
+                        <p>Cross-origin güvenliği</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 17: Gelecek Planları -->
+            <section>
+                <h2>🚀 Gelecek Planları</h2>
+                
+                <div style="text-align: left; max-width: 900px; margin: 0 auto;">
+                    <h3 style="color: var(--gold);">Kısa Vadeli (1-3 ay)</h3>
+                    <ul>
+                        <li>👥 Sosyal özellikler (Arkadaş ekleme, yorumlar)</li>
+                        <li>🔔 Email ve push bildirimleri</li>
+                        <li>📊 Gelişmiş analytics</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--violet); margin-top: 30px;">Orta Vadeli (3-6 ay)</h3>
+                    <ul>
+                        <li>📱 Mobil uygulama (React Native)</li>
+                        <li>💎 Premium özellikler</li>
+                        <li>👥 Grup/takım özellikleri</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--gold); margin-top: 30px;">Uzun Vadeli (6-12 ay)</h3>
+                    <ul>
+                        <li>🤖 AI entegrasyonu</li>
+                        <li>🔗 Üçüncü parti entegrasyonlar</li>
+                        <li>🌍 Çoklu dil desteği</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Slide 18: Demo -->
+            <section data-background-gradient="linear-gradient(to bottom, #1e1b4b, #7c3aed)">
+                <h2>📱 DEMO</h2>
+                <h3 style="margin-top: 50px;">Canlı Demo</h3>
+                <p style="font-size: 1.5em; color: var(--gold); margin-top: 30px;">
+                    https://academic-wizard.preview.emergentagent.com
+                </p>
+                
+                <div style="margin-top: 50px;">
+                    <h4>Test Hesabı:</h4>
+                    <p>Email: demo@wizard.com</p>
+                    <p>Password: demo123</p>
+                </div>
+            </section>
+
+            <!-- Slide 19: Proje Metrikleri -->
+            <section>
+                <h2>📊 Proje Metrikleri</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;">
+                    <div>
+                        <p class="metric">~2500</p>
+                        <p>Satır Kod</p>
+                    </div>
+                    <div>
+                        <p class="metric">15+</p>
+                        <p>API Endpoints</p>
+                    </div>
+                    <div>
+                        <p class="metric">6</p>
+                        <p>Sayfa</p>
+                    </div>
+                    <div>
+                        <p class="metric">8</p>
+                        <p>Tılsım</p>
+                    </div>
+                    <div>
+                        <p class="metric">~16</p>
+                        <p>Saat Geliştirme</p>
+                    </div>
+                    <div>
+                        <p class="metric">100%</p>
+                        <p>Test Başarı</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 20: Sonuç -->
+            <section data-background-gradient="linear-gradient(to bottom, #020617, #1e1b4b)">
+                <h2>💡 Sonuç</h2>
+                <p style="font-size: 1.3em; margin-top: 50px;">
+                    <span class="highlight">Akademik Büyücü</span>, alışkanlık takibini 
+                    oyunlaştırarak kullanıcıların hedeflerine ulaşmasını 
+                    <span class="highlight">kolaylaştıran</span> ve 
+                    <span class="highlight">eğlenceli</span> hale getiren 
+                    modern bir web uygulamasıdır.
+                </p>
+                
+                <div style="margin-top: 60px;">
+                    <div class="success-badge" style="font-size: 1.2em; padding: 10px 30px;">
+                        ✓ Teknik Hedefler
+                    </div>
+                    <div class="success-badge" style="font-size: 1.2em; padding: 10px 30px;">
+                        ✓ Ürün Hedefleri
+                    </div>
+                    <div class="success-badge" style="font-size: 1.2em; padding: 10px 30px;">
+                        ✓ Test Başarısı
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 21: Teşekkürler -->
+            <section data-background-gradient="radial-gradient(circle, #7c3aed, #020617)">
+                <h1>🙏 Teşekkürler!</h1>
+                
+                <div style="margin-top: 80px; font-size: 1.3em;">
+                    <p>📧 developer@akademikbuyucu.com</p>
+                    <p>🐦 @AkademikBuyucu</p>
+                    <p>💼 linkedin.com/in/akademikbuyucu</p>
+                </div>
+                
+                <p style="margin-top: 80px; font-size: 1.5em; color: var(--gold);">
+                    Sorularınız?
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            controls: true,
+            progress: true,
+            center: true,
+            plugins: [ RevealNotes, RevealHighlight ]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Minimal custom styles */
+.mystic-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mystic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Smooth transitions for cards */
+.spell-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.spell-card:hover {
+  transform: translateY(-2px);
+}
+
+/* XP Bar gradient */
+.xp-bar-gradient {
+  background: linear-gradient(90deg, #4c1d95 0%, #7c3aed 50%, #22d3ee 100%);
+}
+
+/* Level badge shine */
+@keyframes shine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.level-badge {
+  background: linear-gradient(to bottom, #fcd34d, #fbbf24, #d97706);
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+}
